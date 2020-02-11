@@ -1,10 +1,10 @@
 import React from 'react';
+import Header from './components/header/header'
 
 function App() {
   return (
     <div className="App">
-      places with redux
-      show must go on!
+      <Header />
     </div>
   );
 }
