@@ -1,18 +1,30 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
+const Navbar = styled.nav({
+    background: '#ECECEC',
+    display: 'flex',
+    padding: '15px'
+})
+
+
+const Title = styled.h3({
+    margin: 'auto',
+    fontSize: '1.4em'
+})
 
 
 function Header() {
     return (
-        <div >
-            <nav className="navbar navbar-expand-lg navbar-light bg-light" >
-                <div className="navbar-brand">
-                    <img src={require("../../assets/restaurant.svg")} width="50px" height="50px" alt="logo" />
+        <>
+            <Navbar>
+                <div>
+                    <img src={require("../../assets/restaurant.svg")} width='40px' height='40px' alt="logo" />
                 </div>
-                <div className="mx-auto">
-                    Places To Eat
-                </div>
-            </ nav>
-        </div>
+                <Title>Places To Eat</Title>
+            </Navbar>
+        </>
     )
 }
 
