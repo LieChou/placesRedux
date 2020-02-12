@@ -12,7 +12,7 @@ const Data = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                data: action.data
+                data: action.results
             }
         case types.DATA_ERROR:
             return {

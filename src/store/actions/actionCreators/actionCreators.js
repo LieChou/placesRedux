@@ -19,11 +19,18 @@ const fetchDataError = () => {
     }
 }
 
-export const fetchData = () => {
+const fetchData = () => {
     return dispatch => {
         dispatch(fetchDataRequested())
         return fetch(`${'https://cors-anywhere.herokuapp.com/'}https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.864716,2.349014&radius=1500&type=restaurant&key=${process.env.REACT_APP_GOOGLE_MAPS}`)
-            .then(console.log(response))
-
+            .then(
+                (response) => console.log(response.data.results),
+                dispatch(fetchDataSuccess()))
+            .catch((error) => {
+                console.log(error);
+                dispatch(fetchDataError())
+            })
     }
 }
+
+export default fetchData;
